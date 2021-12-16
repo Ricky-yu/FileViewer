@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UICollectionViewController {
     let fileManager = FileManager.default
-    var folderURL: URL = Bundle.main.bundleURL.appendingPathComponent("A Folder")
+    var folderURL: URL = Bundle.main.bundleURL.appendingPathComponent("AFolder")
     private var filesUrl = Array<URL>()
     private var subfilesUrl = Array<URL>()
     
