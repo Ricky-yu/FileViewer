@@ -37,8 +37,8 @@ extension ViewController {
         
    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FileViewCell", for: indexPath) as! FileViewCell
-            let item = self.filesUrl[indexPath.row]
-            cell.setupCell(title: "\(item)", image: UIImage(named: "folder")!)
+            let item = folder.contents[indexPath.row]
+            cell.setupCell(item: item)
             return cell
         }
 }
