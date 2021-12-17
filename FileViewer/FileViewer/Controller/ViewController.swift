@@ -41,8 +41,8 @@ class ViewController: UICollectionViewController {
 
 extension ViewController {
    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return filesUrl.count // 表示するセルの数
-        }
+        return folder.contents.count // 表示するセルの数
+    }
         
    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FileViewCell", for: indexPath) as! FileViewCell
