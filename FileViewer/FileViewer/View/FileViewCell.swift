@@ -12,8 +12,16 @@ class FileViewCell: UICollectionViewCell {
     @IBOutlet weak var fileImageView: UIImageView!
     @IBOutlet weak var fileTitle: UILabel!
     
-    func setupCell(title: String, image: UIImage) {
-        self.fileTitle.text = title
-        self.fileImageView.image = image
+    func setupCell(item: Item) {
+        self.fileTitle.text = item.name
+        switch item.key {
+        case .folder:
+            self.fileImageView.image = UIImage(named: "folder")
+        case .txt:
+            self.fileImageView.image = UIImage(named: "file")
+        default:
+            self.fileImageView.image = UIImage(named: "file")
+        }
+        
     }
 }

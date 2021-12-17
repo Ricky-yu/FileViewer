@@ -12,7 +12,16 @@ class ViewController: UICollectionViewController {
     var folderURL: URL = Bundle.main.bundleURL.appendingPathComponent("AFolder")
     private var filesUrl = Array<URL>()
     private var subfilesUrl = Array<URL>()
-    
+    var folder: Folder = Store.shared.rootFolder {
+        didSet {
+            collectionView.reloadData()
+            if folder === folder.store?.rootFolder {
+                title = "file"
+            } else {
+                title = folder.name
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         print(folderURL)
@@ -32,13 +41,13 @@ class ViewController: UICollectionViewController {
 
 extension ViewController {
    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return filesUrl.count // 表示するセルの数
-        }
+        return folder.contents.count // 表示するセルの数
+    }
         
    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FileViewCell", for: indexPath) as! FileViewCell
-            let item = self.filesUrl[indexPath.row]
-            cell.setupCell(title: "\(item)", image: UIImage(named: "folder")!)
+            let item = folder.contents[indexPath.row]
+            cell.setupCell(item: item)
             return cell
         }
 }
