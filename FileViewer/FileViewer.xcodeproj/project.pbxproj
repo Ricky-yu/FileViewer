@@ -28,6 +28,9 @@
 		74F93454276BA939002703AA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F93453276BA939002703AA /* Item.swift */; };
 		74F93455276BA939002703AA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F93453276BA939002703AA /* Item.swift */; };
 		74F93456276BA939002703AA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F93453276BA939002703AA /* Item.swift */; };
+		74F9345C276D07E2002703AA /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F9345B276D07E2002703AA /* ExtensionViewController.swift */; };
+		74F9345D276D07E2002703AA /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F9345B276D07E2002703AA /* ExtensionViewController.swift */; };
+		74F9345E276D07E2002703AA /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F9345B276D07E2002703AA /* ExtensionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,7 @@
 		74F93445276BA794002703AA /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		74F9344C276BA8FB002703AA /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
 		74F93453276BA939002703AA /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		74F9345B276D07E2002703AA /* ExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 		74F933AD276ABD4E002703AA /* FileViewer */ = {
 			isa = PBXGroup;
 			children = (
+				74F9345A276D0797002703AA /* Util */,
 				74F93436276AC088002703AA /* AFolder */,
 				74F933E3276ABEA0002703AA /* Controller */,
 				74F933E2276ABE9A002703AA /* Model */,
@@ -173,6 +178,14 @@
 				74F933B2276ABD4E002703AA /* ViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		74F9345A276D0797002703AA /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				74F9345B276D07E2002703AA /* ExtensionViewController.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +323,7 @@
 				74F933E5276ABF37002703AA /* FileViewCell.swift in Sources */,
 				74F933B3276ABD4E002703AA /* ViewController.swift in Sources */,
 				74F933AF276ABD4E002703AA /* AppDelegate.swift in Sources */,
+				74F9345C276D07E2002703AA /* ExtensionViewController.swift in Sources */,
 				74F93454276BA939002703AA /* Item.swift in Sources */,
 				74F933B1276ABD4E002703AA /* SceneDelegate.swift in Sources */,
 				74F9344D276BA8FB002703AA /* Folder.swift in Sources */,
@@ -322,6 +336,7 @@
 			files = (
 				74F93455276BA939002703AA /* Item.swift in Sources */,
 				74F93447276BA794002703AA /* Store.swift in Sources */,
+				74F9345D276D07E2002703AA /* ExtensionViewController.swift in Sources */,
 				74F933E6276ABF37002703AA /* FileViewCell.swift in Sources */,
 				74F933C6276ABD53002703AA /* FileViewerTests.swift in Sources */,
 				74F9344E276BA8FB002703AA /* Folder.swift in Sources */,
@@ -334,6 +349,7 @@
 			files = (
 				74F93456276BA939002703AA /* Item.swift in Sources */,
 				74F93448276BA794002703AA /* Store.swift in Sources */,
+				74F9345E276D07E2002703AA /* ExtensionViewController.swift in Sources */,
 				74F933E7276ABF37002703AA /* FileViewCell.swift in Sources */,
 				74F933D1276ABD53002703AA /* FileViewerUITests.swift in Sources */,
 				74F9344F276BA8FB002703AA /* Folder.swift in Sources */,
