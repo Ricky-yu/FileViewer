@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="-1206" y="9"/>
         </scene>
-        <!--View Controller-->
+        <!--FileViewer-->
         <scene sceneID="3jH-qp-4ay">
             <objects>
                 <collectionViewController id="375-gF-k4N" customClass="ViewController" customModule="FileViewer" customModuleProvider="target" sceneMemberID="viewController">
@@ -85,7 +85,16 @@
                             <outlet property="delegate" destination="375-gF-k4N" id="eQn-4a-jr8"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="Qbz-Y8-xFO"/>
+                    <navigationItem key="navigationItem" title="FileViewer" id="7JV-9c-AeC">
+                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="aK5-YC-Qba">
+                            <connections>
+                                <action selector="createNewFolder:" destination="375-gF-k4N" id="k4f-54-bDr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="navifationBar" destination="7JV-9c-AeC" id="5mA-x7-BI0"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GVJ-Me-zNV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
