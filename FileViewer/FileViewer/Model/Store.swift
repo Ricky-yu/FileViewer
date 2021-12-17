@@ -16,7 +16,7 @@ final class Store {
     
     let baseURL: URL?
     var placeholder: URL?
-    private(set) var rootFolder: Folder
+    let rootFolder = Folder(name: "AFolder", url: folderURL, key: .folder)
     
     init(url: URL?) {
 
