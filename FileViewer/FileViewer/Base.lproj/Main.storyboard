@@ -77,6 +77,7 @@
                                 <connections>
                                     <outlet property="fileImageView" destination="DX2-pX-Ef2" id="0Tz-zi-ajI"/>
                                     <outlet property="fileTitle" destination="Oo3-UO-3m5" id="08l-PB-aG9"/>
+                                    <segue destination="375-gF-k4N" kind="show" identifier="showFolder" id="LIc-NO-1yC"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

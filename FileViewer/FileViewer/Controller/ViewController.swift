@@ -8,17 +8,14 @@
 import UIKit
 
 class ViewController: UICollectionViewController {
-    let fileManager = FileManager.default
-    var folderURL: URL = Bundle.main.bundleURL.appendingPathComponent("AFolder")
-    private var filesUrl = Array<URL>()
-    private var subfilesUrl = Array<URL>()
-    var folder: Folder = Store.shared.rootFolder {
+    @IBOutlet weak var navifationBar: UINavigationItem!
+    private var folder: Folder = Store.shared.rootFolder {
         didSet {
             collectionView.reloadData()
             if folder === folder.store?.rootFolder {
-                title = "file"
+                navifationBar.title = "no Name"
             } else {
-                title = folder.name
+                navifationBar.title = folder.name
             }
         }
     }
