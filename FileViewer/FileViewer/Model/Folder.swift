@@ -22,6 +22,7 @@ class Folder: Item {
     
     func add(_ item: Item) {
         contents.append(item)
+        contents.sort(by: {$0.name.localizedStandardCompare($1.name) == .orderedAscending})
     }
     
 }
