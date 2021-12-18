@@ -19,19 +19,25 @@ class ViewController: UICollectionViewController {
             }
         }
     }
+    
+    @objc func handleChangeNotification(_ notification: Notification) {
+        collectionView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(folderURL)
-        if let fileContents = try? fileManager.contentsOfDirectory(at: folderURL, includingPropertiesForKeys: [URLResourceKey.nameKey, URLResourceKey.isDirectoryKey], options: .skipsHiddenFiles) {
-            self.filesUrl = fileContents
-            print(fileContents)
-            subfilesUrl = fileContents.filter { url in
-                var isDirectory: ObjCBool = false
-                return FileManager.default.fileExists(atPath: url.path, isDirectory: &isDirectory) && isDirectory.boolValue
-            }
-            print(subfilesUrl)
-        } else {
-            
+        folder.search()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleChangeNotification(_:)), name: Store.changedNotification, object: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+        if identifier == .showFolder {
+            let folderVC = segue.destination as! ViewController
+            let cell = sender as! UICollectionViewCell
+            let indexPath = self.collectionView!.indexPath(for: cell)
+            let selectedFolder = folder.contents[indexPath!.row] as! Folder
+            folderVC.folder = selectedFolder
         }
     }
 }

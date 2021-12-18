@@ -35,6 +35,24 @@ final class Store {
             self.rootFolder.store = self
     }
     
+    func getData(folder: Folder) {
+        if let fileContents = try? fileManager.contentsOfDirectory(at: self.baseURL!, includingPropertiesForKeys: [URLResourceKey.nameKey, URLResourceKey.isDirectoryKey], options: .skipsHiddenFiles) {
+            
+            for (i, url) in fileContents.enumerated() {
+                let fileName = url.absoluteString.split(separator: "/").last!
+                var isDirectory:ObjCBool = false
+                let isExist = fileManager.fileExists(atPath: url.path, isDirectory: &isDirectory)
+                if isExist && isDirectory.boolValue {
+                    folder.setItem(Folder(name: "\(fileName.removingPercentEncoding!)", url: url, key: .folder))
+                } else {
+                    print("\(fileName.removingPercentEncoding!)")
+                    folder.setItem(Folder(name: "\(fileName.removingPercentEncoding!)", url: url, key: .txt))
+                }
+            }
+        }
+        NotificationCenter.default.post(name: Store.changedNotification, object: nil, userInfo: nil)
+    }
+    
     func save(_ notifying: Item, userInfo: [AnyHashable: Any]) {
         NotificationCenter.default.post(name: Store.changedNotification, object: notifying, userInfo: userInfo)
     }
