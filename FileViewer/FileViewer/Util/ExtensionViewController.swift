@@ -20,8 +20,3 @@ extension UIViewController {
         present(alert, animated: true)
     }
 }
-
-fileprivate extension String {
-    static let ok = NSLocalizedString("OK", comment: "")
-    static let cancel = NSLocalizedString("Cancel", comment: "")
-}
