@@ -40,6 +40,19 @@ class ViewController: UICollectionViewController {
             folderVC.folder = selectedFolder
         }
     }
+    
+    
+    @IBAction func createNewFolder(_ sender: Any) {
+        modalTextAlert(title: .createFolder, accept: .create, placeholder: .folderName) { string in
+            if let s = string {
+                let encodeUrlString: String = s.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+                let urlString = self.folder.url.absoluteString + encodeUrlString
+                let newFolder = Folder(name: s, url: URL(string: urlString)!, key: .folder)
+                self.folder.add(newFolder)
+            }
+            self.dismiss(animated: true)
+        }
+    }
 }
 
 extension ViewController {
