@@ -8,33 +8,49 @@
 import UIKit
 
 class ViewController: UICollectionViewController {
-    let fileManager = FileManager.default
-    var folderURL: URL = Bundle.main.bundleURL.appendingPathComponent("AFolder")
-    private var filesUrl = Array<URL>()
-    private var subfilesUrl = Array<URL>()
-    var folder: Folder = Store.shared.rootFolder {
+    @IBOutlet weak var navifationBar: UINavigationItem!
+    private var folder: Folder = Store.shared.rootFolder {
         didSet {
             collectionView.reloadData()
             if folder === folder.store?.rootFolder {
-                title = "file"
+                navifationBar.title = "no Name"
             } else {
-                title = folder.name
+                navifationBar.title = folder.name
             }
         }
     }
+    
+    @objc func handleChangeNotification(_ notification: Notification) {
+        collectionView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(folderURL)
-        if let fileContents = try? fileManager.contentsOfDirectory(at: folderURL, includingPropertiesForKeys: [URLResourceKey.nameKey, URLResourceKey.isDirectoryKey], options: .skipsHiddenFiles) {
-            self.filesUrl = fileContents
-            print(fileContents)
-            subfilesUrl = fileContents.filter { url in
-                var isDirectory: ObjCBool = false
-                return FileManager.default.fileExists(atPath: url.path, isDirectory: &isDirectory) && isDirectory.boolValue
+        folder.search()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleChangeNotification(_:)), name: Store.changedNotification, object: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+        if identifier == .showFolder {
+            let folderVC = segue.destination as! ViewController
+            let cell = sender as! UICollectionViewCell
+            let indexPath = self.collectionView!.indexPath(for: cell)
+            let selectedFolder = folder.contents[indexPath!.row] as! Folder
+            folderVC.folder = selectedFolder
+        }
+    }
+    
+    
+    @IBAction func createNewFolder(_ sender: Any) {
+        modalTextAlert(title: .createFolder, accept: .create, placeholder: .folderName) { string in
+            if let s = string {
+                let encodeUrlString: String = s.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+                let urlString = self.folder.url.absoluteString + encodeUrlString
+                let newFolder = Folder(name: s, url: URL(string: urlString)!, key: .folder)
+                self.folder.add(newFolder)
             }
-            print(subfilesUrl)
-        } else {
-            
+            self.dismiss(animated: true)
         }
     }
 }

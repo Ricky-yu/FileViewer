@@ -17,12 +17,14 @@ class Item {
             store = parent?.store
         }
     }
+    
     init(name: String, url: URL, key: Datakey) {
         self.name = name
         self.key = key
         self.url = url
         self.store = nil
     }
+    
     func setName(_ newName: String) {
         
     }
