@@ -15,9 +15,9 @@
 		74F933BB276ABD52002703AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74F933B9276ABD52002703AA /* LaunchScreen.storyboard */; };
 		74F933C6276ABD53002703AA /* FileViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F933C5276ABD53002703AA /* FileViewerTests.swift */; };
 		74F933D1276ABD53002703AA /* FileViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F933D0276ABD53002703AA /* FileViewerUITests.swift */; };
-		74F933E5276ABF37002703AA /* FileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F933E4276ABF37002703AA /* FileViewCell.swift */; };
-		74F933E6276ABF37002703AA /* FileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F933E4276ABF37002703AA /* FileViewCell.swift */; };
-		74F933E7276ABF37002703AA /* FileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F933E4276ABF37002703AA /* FileViewCell.swift */; };
+		74F933E5276ABF37002703AA /* FolderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F933E4276ABF37002703AA /* FolderViewCell.swift */; };
+		74F933E6276ABF37002703AA /* FolderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F933E4276ABF37002703AA /* FolderViewCell.swift */; };
+		74F933E7276ABF37002703AA /* FolderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F933E4276ABF37002703AA /* FolderViewCell.swift */; };
 		74F93437276AC088002703AA /* AFolder in Resources */ = {isa = PBXBuildFile; fileRef = 74F93436276AC088002703AA /* AFolder */; };
 		74F93446276BA794002703AA /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F93445276BA794002703AA /* Store.swift */; };
 		74F93447276BA794002703AA /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F93445276BA794002703AA /* Store.swift */; };
@@ -34,6 +34,24 @@
 		74F93466276E29C1002703AA /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F93465276E29C1002703AA /* ExtensionString.swift */; };
 		74F93467276E29C1002703AA /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F93465276E29C1002703AA /* ExtensionString.swift */; };
 		74F93468276E29C1002703AA /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F93465276E29C1002703AA /* ExtensionString.swift */; };
+		74F93470276F3BA9002703AA /* FileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F9346F276F3BA9002703AA /* FileViewController.swift */; };
+		74F93471276F3BA9002703AA /* FileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F9346F276F3BA9002703AA /* FileViewController.swift */; };
+		74F93472276F3BA9002703AA /* FileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F9346F276F3BA9002703AA /* FileViewController.swift */; };
+		74F9347A276F4030002703AA /* FileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F93479276F4030002703AA /* FileViewCell.swift */; };
+		74F9347B276F4030002703AA /* FileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F93479276F4030002703AA /* FileViewCell.swift */; };
+		74F9347C276F4030002703AA /* FileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F93479276F4030002703AA /* FileViewCell.swift */; };
+		74F93481276F4307002703AA /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F93480276F4307002703AA /* File.swift */; };
+		74F93482276F4307002703AA /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F93480276F4307002703AA /* File.swift */; };
+		74F93483276F4307002703AA /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F93480276F4307002703AA /* File.swift */; };
+		74F93488276F5D6E002703AA /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F93487276F5D6E002703AA /* ImageViewController.swift */; };
+		74F93489276F5D6E002703AA /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F93487276F5D6E002703AA /* ImageViewController.swift */; };
+		74F9348A276F5D6E002703AA /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F93487276F5D6E002703AA /* ImageViewController.swift */; };
+		74F9348F276F5D87002703AA /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F9348E276F5D87002703AA /* Image.swift */; };
+		74F93490276F5D87002703AA /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F9348E276F5D87002703AA /* Image.swift */; };
+		74F93491276F5D87002703AA /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F9348E276F5D87002703AA /* Image.swift */; };
+		74F93496276F5DBC002703AA /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F93495276F5DBC002703AA /* ImageViewCell.swift */; };
+		74F93497276F5DBC002703AA /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F93495276F5DBC002703AA /* ImageViewCell.swift */; };
+		74F93498276F5DBC002703AA /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F93495276F5DBC002703AA /* ImageViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,13 +86,19 @@
 		74F933CC276ABD53002703AA /* FileViewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FileViewerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74F933D0276ABD53002703AA /* FileViewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileViewerUITests.swift; sourceTree = "<group>"; };
 		74F933D2276ABD53002703AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		74F933E4276ABF37002703AA /* FileViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileViewCell.swift; sourceTree = "<group>"; };
+		74F933E4276ABF37002703AA /* FolderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderViewCell.swift; sourceTree = "<group>"; };
 		74F93436276AC088002703AA /* AFolder */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AFolder; sourceTree = "<group>"; };
 		74F93445276BA794002703AA /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		74F9344C276BA8FB002703AA /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
 		74F93453276BA939002703AA /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		74F9345B276D07E2002703AA /* ExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionViewController.swift; sourceTree = "<group>"; };
 		74F93465276E29C1002703AA /* ExtensionString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
+		74F9346F276F3BA9002703AA /* FileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileViewController.swift; sourceTree = "<group>"; };
+		74F93479276F4030002703AA /* FileViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileViewCell.swift; sourceTree = "<group>"; };
+		74F93480276F4307002703AA /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		74F93487276F5D6E002703AA /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		74F9348E276F5D87002703AA /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		74F93495276F5DBC002703AA /* ImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +185,9 @@
 		74F933E1276ABE93002703AA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				74F933E4276ABF37002703AA /* FileViewCell.swift */,
+				74F933E4276ABF37002703AA /* FolderViewCell.swift */,
+				74F93479276F4030002703AA /* FileViewCell.swift */,
+				74F93495276F5DBC002703AA /* ImageViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,6 +198,8 @@
 				74F93445276BA794002703AA /* Store.swift */,
 				74F9344C276BA8FB002703AA /* Folder.swift */,
 				74F93453276BA939002703AA /* Item.swift */,
+				74F93480276F4307002703AA /* File.swift */,
+				74F9348E276F5D87002703AA /* Image.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,6 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				74F933B2276ABD4E002703AA /* ViewController.swift */,
+				74F9346F276F3BA9002703AA /* FileViewController.swift */,
+				74F93487276F5D6E002703AA /* ImageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -325,13 +355,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				74F93446276BA794002703AA /* Store.swift in Sources */,
-				74F933E5276ABF37002703AA /* FileViewCell.swift in Sources */,
+				74F93481276F4307002703AA /* File.swift in Sources */,
+				74F933E5276ABF37002703AA /* FolderViewCell.swift in Sources */,
+				74F9347A276F4030002703AA /* FileViewCell.swift in Sources */,
 				74F933B3276ABD4E002703AA /* ViewController.swift in Sources */,
 				74F933AF276ABD4E002703AA /* AppDelegate.swift in Sources */,
+				74F93488276F5D6E002703AA /* ImageViewController.swift in Sources */,
+				74F9348F276F5D87002703AA /* Image.swift in Sources */,
 				74F9345C276D07E2002703AA /* ExtensionViewController.swift in Sources */,
 				74F93466276E29C1002703AA /* ExtensionString.swift in Sources */,
+				74F93470276F3BA9002703AA /* FileViewController.swift in Sources */,
 				74F93454276BA939002703AA /* Item.swift in Sources */,
 				74F933B1276ABD4E002703AA /* SceneDelegate.swift in Sources */,
+				74F93496276F5DBC002703AA /* ImageViewCell.swift in Sources */,
 				74F9344D276BA8FB002703AA /* Folder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,11 +377,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				74F93455276BA939002703AA /* Item.swift in Sources */,
+				74F93490276F5D87002703AA /* Image.swift in Sources */,
+				74F93497276F5DBC002703AA /* ImageViewCell.swift in Sources */,
+				74F9347B276F4030002703AA /* FileViewCell.swift in Sources */,
 				74F93447276BA794002703AA /* Store.swift in Sources */,
+				74F93471276F3BA9002703AA /* FileViewController.swift in Sources */,
 				74F9345D276D07E2002703AA /* ExtensionViewController.swift in Sources */,
-				74F933E6276ABF37002703AA /* FileViewCell.swift in Sources */,
+				74F93482276F4307002703AA /* File.swift in Sources */,
+				74F933E6276ABF37002703AA /* FolderViewCell.swift in Sources */,
 				74F933C6276ABD53002703AA /* FileViewerTests.swift in Sources */,
 				74F93467276E29C1002703AA /* ExtensionString.swift in Sources */,
+				74F93489276F5D6E002703AA /* ImageViewController.swift in Sources */,
 				74F9344E276BA8FB002703AA /* Folder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,11 +397,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				74F93456276BA939002703AA /* Item.swift in Sources */,
+				74F93491276F5D87002703AA /* Image.swift in Sources */,
+				74F93498276F5DBC002703AA /* ImageViewCell.swift in Sources */,
+				74F9347C276F4030002703AA /* FileViewCell.swift in Sources */,
 				74F93448276BA794002703AA /* Store.swift in Sources */,
+				74F93472276F3BA9002703AA /* FileViewController.swift in Sources */,
 				74F9345E276D07E2002703AA /* ExtensionViewController.swift in Sources */,
-				74F933E7276ABF37002703AA /* FileViewCell.swift in Sources */,
+				74F93483276F4307002703AA /* File.swift in Sources */,
+				74F933E7276ABF37002703AA /* FolderViewCell.swift in Sources */,
 				74F933D1276ABD53002703AA /* FileViewerUITests.swift in Sources */,
 				74F93468276E29C1002703AA /* ExtensionString.swift in Sources */,
+				74F9348A276F5D6E002703AA /* ImageViewController.swift in Sources */,
 				74F9344F276BA8FB002703AA /* Folder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
