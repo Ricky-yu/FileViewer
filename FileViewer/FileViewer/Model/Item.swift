@@ -6,7 +6,7 @@
 //
 
 import UIKit
-enum Datakey: CodingKey { case folder, txt}
+enum Datakey: CodingKey { case folder, txt, png}
 class Item {
     let url: URL
     private(set) var name: String
