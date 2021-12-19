@@ -44,8 +44,11 @@ final class Store {
                 if isExist && isDirectory.boolValue {
                     folder.setItem(Folder(name: "\(fileName.removingPercentEncoding!)", url: url, key: .folder))
                 } else {
-                    print("\(fileName.removingPercentEncoding!)")
-                    folder.setItem(Folder(name: "\(fileName.removingPercentEncoding!)", url: url, key: .txt))
+                    if (fileName.contains(".txt")) {
+                        folder.setItem(File(name: "\(fileName.removingPercentEncoding!)", url: url, key: .txt))
+                    } else {
+                        folder.setItem(Image(name: "\(fileName.removingPercentEncoding!)", url: url, key: .png))
+                    }
                 }
             }
         }
