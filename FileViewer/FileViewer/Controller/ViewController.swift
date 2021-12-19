@@ -38,6 +38,18 @@ class ViewController: UICollectionViewController {
             let indexPath = self.collectionView!.indexPath(for: cell)
             let selectedFolder = folder.contents[indexPath!.row] as! Folder
             folderVC.folder = selectedFolder
+        } else if identifier == .showFile {
+            let fileVC = segue.destination as! FileViewController
+            let cell = sender as! UICollectionViewCell
+            let indexPath = self.collectionView!.indexPath(for: cell)
+            let selectedFile = folder.contents[indexPath!.row] as! File
+            fileVC.file = selectedFile
+        } else {
+            let imageVC = segue.destination as! ImageViewController
+            let cell = sender as! UICollectionViewCell
+            let indexPath = self.collectionView!.indexPath(for: cell)
+            let selectedImage = folder.contents[indexPath!.row] as! Image
+            imageVC.image = selectedImage
         }
     }
     
@@ -60,10 +72,27 @@ extension ViewController {
         return folder.contents.count // 表示するセルの数
     }
         
-   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FileViewCell", for: indexPath) as! FileViewCell
-            let item = folder.contents[indexPath.row]
-            cell.setupCell(item: item)
-            return cell
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let item = folder.contents[indexPath.row]
+        var identifier:String?
+        print(item.name)
+        print(item.key)
+        switch item.key {
+        case .folder: identifier = "FolderViewCell"
+        case .txt: identifier = "FileViewCell"
+        default:
+            identifier = "ImageViewCell"
         }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier!, for: indexPath)
+        switch cell {
+        case is FolderViewCell:
+            (cell as! FolderViewCell).setupCell(item: item)
+        case is FileViewCell:
+            (cell as! FileViewCell).setupCell(item: item)
+        default:
+            (cell as! ImageViewCell).setupCell(item: item)
+        }
+        
+        return cell
+    }
 }

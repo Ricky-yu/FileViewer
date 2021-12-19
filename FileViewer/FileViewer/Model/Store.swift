@@ -18,20 +18,7 @@ final class Store {
     
     init(url: URL?) {
         self.baseURL = url
-        if let fileContents = try? fileManager.contentsOfDirectory(at: self.baseURL!, includingPropertiesForKeys: [URLResourceKey.nameKey, URLResourceKey.isDirectoryKey], options: .skipsHiddenFiles) {
-            
-            for (i, url) in fileContents.enumerated() {
-                let fileName = url.absoluteString.split(separator: "/").last!
-                var isDirectory:ObjCBool = false
-                let isExist = fileManager.fileExists(atPath: url.path, isDirectory: &isDirectory)
-                if isExist && isDirectory.boolValue {
-                    rootFolder.setItem(Folder(name: "\(fileName.removingPercentEncoding!)", url: url, key: .folder))
-                } else {
-                    rootFolder.setItem(Folder(name: "\(fileName.removingPercentEncoding!)", url: url, key: .txt))
-                }
-            }
-        }
-            self.rootFolder.store = self
+        self.rootFolder.store = self
     }
     
     func getData(folder: Folder) {
@@ -44,8 +31,11 @@ final class Store {
                 if isExist && isDirectory.boolValue {
                     folder.setItem(Folder(name: "\(fileName.removingPercentEncoding!)", url: url, key: .folder))
                 } else {
-                    print("\(fileName.removingPercentEncoding!)")
-                    folder.setItem(Folder(name: "\(fileName.removingPercentEncoding!)", url: url, key: .txt))
+                    if (fileName.contains(".txt")) {
+                        folder.setItem(File(name: "\(fileName.removingPercentEncoding!)", url: url, key: .txt))
+                    } else {
+                        folder.setItem(Image(name: "\(fileName.removingPercentEncoding!)", url: url, key: .png))
+                    }
                 }
             }
         }
